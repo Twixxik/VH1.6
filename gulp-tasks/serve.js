@@ -7,11 +7,8 @@ import browsersync from "browser-sync";
 gulp.task("serve", () => {
     browsersync.init({
         server: "./dist/",
-        proxy: 'twixxik.dev',
         port: 4000,
         notify: false,
-        https: true,
-        tunnel: "twixxik",
         online: true,
     });
 
