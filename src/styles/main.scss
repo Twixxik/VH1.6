@@ -7,12 +7,77 @@
 @import "../blocks/components/components";
 @import "../blocks/modules/modules";
 
+:root {
+  font: 400 12px/1.6em Montserrat, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
 
 .vh-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #000;
+  background: #fff;
+  border-bottom: 1.6px solid #000;
+  box-sizing: border-box;
   height: 50px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+}
+
+.vh-logo {
+  &__svg {
+    fill: #000;
+    height: 35px;
+  }
+}
+
+.vh-search {
+  &:before {
+    content: '\f002';
+  }
+  &:hover:before {
+    font-weight: 700;
+  }
+}
+
+.vh-basket {
+  &:before {
+    content: '\f291';
+  }
+  &:hover:before {
+    font-weight: 700;
+  }
+}
+
+.vh-user {
+  &:before {
+    content: '\f234';
+  }
+  &:hover:before {
+    font-weight: 700;
+  }
+  &.auth:before {
+    content: '\f007';
+  }
+}
+
+.vh-phone {
+  &:before {
+    content: '\f095';
+  }
+  &:hover:before {
+    font-weight: 700;
+  }
+}
+
+.vh-wishlist {
+  &:before {
+    content: '\f004';
+  }
+  &:hover:before {
+    font-weight: 700;
+  }
 }

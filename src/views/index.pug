@@ -8,9 +8,25 @@ block content
 
 	header.vh-header
 		.container
-			a(href="/").vh-logo
-				img(src="" alt="Visagehall").vh-logo__img
 			nav.vh-nav
+				ul.vh-nav__wrap
+					li.vh-nav__logo
+						a(href="/").vh-logo
+							img(src="/img/svg/vh_logo_desktop.svg" alt="Visagehall").vh-logo__svg
+					li.vh-nav__menu
+						| меню
+					li.vh-nav__quick
+						ul.vh-nav__quick-list
+							li.vh-nav__search
+								a(href="#search").vh-search.far
+							li.vh-nav__basket
+								a(href="#basket").vh-basket.far
+							li.vh-nav__user
+								a(href="#user").vh-user.far
+							li.vh-nav__phone
+								a(href="#phone").vh-phone.far
+							li.vh-nav__wishlist
+								a(href="#wishlist").vh-wishlist.far
 
 
 block scripts
