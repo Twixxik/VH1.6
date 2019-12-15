@@ -13,9 +13,8 @@ const argv = yargs.argv,
 
 gulp.task("views", () => {
     return gulp.src(paths.views.src)
-        .pipe(pug({
-            pretty: true
-        }))
+        .pipe(gulpif(production, pug()))
+        .pipe(gulpif(!production, pug({pretty: true})))
         .pipe(gulpif(production, replace(".css", ".min.css")))
         .pipe(gulpif(production, replace(".js", ".min.js")))
         .pipe(gulp.dest(paths.views.dist))
