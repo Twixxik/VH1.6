@@ -164,6 +164,7 @@ body {
             right: 0;
             width: 50px;
             & svg {
+                z-index: -1;
                 width: auto;
                 height: 16px;
             }
@@ -174,6 +175,7 @@ body {
             align-items: center;
             padding: 0 12px;
             & svg {
+                z-index: -1;
                 width: auto;
                 height: 16px;
                 margin-right: 12px;

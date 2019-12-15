@@ -40,7 +40,6 @@ const vh = {
                     setTimeout(()=>this.resetLists(), 160);
                 } else {
                     this.currentList = this.menu.children[0];
-                    this.currentList.scrollTop = 0;
                 }
                 this.el.classList.toggle("active");
                 document.body.classList.toggle("no-scroll");
@@ -83,6 +82,8 @@ const vh = {
          */
         resetLists: function () {
             this.menu.children[0].classList.remove('prev');
+            this.currentList = this.menu.children[0];
+            this.currentList.scrollTop = 0;
             for ( let list of this.menu.getElementsByClassName('vh-menu__sub')) {
                 if (list.className !== 'vh-menu__sub next')
                 list.className = 'vh-menu__sub next';
