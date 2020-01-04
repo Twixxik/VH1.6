@@ -14,7 +14,7 @@ const argv = yargs.argv,
 
 gulp.task("views", () => {
     return gulp.src(paths.views.src)
-        .pipe(gulpif(!production, pug({pretty:true})))
+        .pipe(pug({pretty:true}))
         .pipe(gulpif(production, htmlmin({collapseWhitespace:true})))
         .pipe(gulpif(production, replace(".css", ".min.css")))
         .pipe(gulpif(production, replace(".js", ".min.js")))
