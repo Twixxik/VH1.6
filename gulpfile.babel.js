@@ -39,6 +39,11 @@ const requireDir = require("require-dir"),
             dist: "./dist/img/",
             watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}"
         },
+        fonts: {
+            src: "./src/fonts/**/*.*",
+            dist: "./dist/fonts/",
+            watch: "./src/fonts/**/*.*"
+        },
         sprites: {
             src: "./src/img/svg/*.svg",
             dist: "./dist/img/sprites/",
@@ -55,10 +60,10 @@ requireDir("./gulp-tasks/");
 export { paths };
 
 export const development = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "sprites"]),
+    gulp.parallel(["views", "styles", "scripts", "fonts", "images", "sprites"]),
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
-    gulp.series(["views", "styles", "scripts", "images", "sprites", "gzip"]));
+    gulp.series(["views", "styles", "scripts", "fonts","images", "sprites", "gzip"]));
 
 export default development;
