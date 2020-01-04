@@ -1,3 +1,8 @@
+/*
+* CSS Mobile first
+* by Twixxik
+*/
+
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/functions";
@@ -14,216 +19,70 @@
 body {
     padding-top: 52px;
     min-height: 1000vh;
-    &.no-scroll {
-        overflow: hidden;
-    }
+
+
 }
 
-.vh-header {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 50px;
-    background: #fff;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+.container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 .vh {
-    &-nav {
-        &__logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 50%;
-            height: 50px;
-            transform: translateX(-50%);
-            transition: .16s ease-in-out;
-        }
-        &__search {
-            position: fixed;
-            z-index: 2;
-            top: 0;
-            right: 0;
-        }
-        &__quick {
-            position: fixed;
-            z-index: 1;
-            top: 50px;
-            right: 0;
-            left: 0;
-            height: 0;
-            overflow: hidden;
-            padding: 0 50px;
-            transition: .16s ease-in-out;
-            &-list {
-                display: flex;
-                justify-content: space-around;
-                height: 100%;
-            }
-        }
-        &__menu {
-            position: fixed;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            width: 50px;
-            height: 50px;
-            background: #fff;
-            &:before, &:after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 17px;
-                left: 12px;
-                width: 26px;
-                height: 1px;
-                transition: .16s ease-in-out;
-                background: #000;
-            }
-            &:after {
-                transform: translateY(15px);
-            }
-        }
-        &.active {
-            .vh {
-                &-nav {
-                    &__menu {
-                        &:before {
-                            top: 25px;
-                            transform: rotate(225deg);
-                        }
 
-                        &:after {
-                            top: 25px;
-                            transform: translateY(0) rotate(-225deg);
-                        }
-                    }
-
-                    &__logo {
-                        top: -50px;
-                    }
-
-                    &__quick {
-                        top: 0;
-                        height: 50px;
-                    }
-                }
-                &-menu {
-                    bottom: 0;
-                    overflow: auto;
-                    &__sub {
-                        bottom: 0;
-                        overflow: auto;
-                    }
-                }
-            }
-        }
-    }
-
-    &-menu {
-        position: fixed;
-        z-index: -500;
-        top: 50px;
-        right: 0;
-        max-width: 100vw;
-        bottom: 100vh;
-        left: 0;
-        overflow: hidden;
-        transition: .16s ease-in-out;
-        border-bottom: 2px solid #000;
-        background: #f6f6f6;
-        &.prev {
-            left: -100vw;
-        }
-        &__item, &__subitem {
-            position: relative;
-            height: 50px;
-            text-transform: uppercase;
-            transition: .16s ease-in-out;
-        }
-        &__link, &__sublink {
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 0 12px;
-        }
-        &__next {
-            position: absolute;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            top: 0;
-            right: 0;
-            width: 50px;
-            & svg {
-                z-index: -1;
-                width: auto;
-                height: 16px;
-            }
-        }
-        &__prev {
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 12px;
-            & svg {
-                z-index: -1;
-                width: auto;
-                height: 16px;
-                margin-right: 12px;
-                transform: rotate(180deg);
-            }
-        }
-        &__sub {
-            position: fixed;
-            top: 50px;
-            max-width: 100vw;
-            bottom: 100vh;
-            left: 0;
-            overflow: hidden;
-            right: 0;
-            transition: .16s ease-in-out;
-            border-bottom: 2px solid #000;
+    &-scroll {
+        &::-webkit-scrollbar, &::-webkit-scrollbar-track, &::-webkit-scrollbar-track-piece{
+            width: 12px;
             background: #f6f6f6;
-            &.next {
-                left: 100vw;
+            &:hover {
+                background: #e6e6e6;
             }
-            &.prev {
-                left: -100vw;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #000 padding-box;
+            border: 2px solid transparent;
+            &:hover {
+                border: 0;
             }
         }
     }
 
-    &-search, &-wishlist, &-user, &-basket, &-phone {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        background: #fff;
-        & svg {
-            width: 16px;
-            height: 16px;
-        }
+    &-header {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 48px;
+        background: #ffffff;
+        border-bottom: 2px solid #000;
     }
 
-    &-logo {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        padding: 0 12px;
-        background: #fff;
-        & svg {
-            width: auto;
-            height: 16px;
+    &-nav {
+        width: 48px;
+        height: 48px;
+        &__menu {
+
         }
+
+        &__item {
+
+        }
+
+        &__link {
+
+        }
+
+        &__submenu {
+
+        }
+
     }
 }
